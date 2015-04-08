@@ -3,6 +3,7 @@ import org.junit.Test;
 
 import static org.bytedeco.javacpp.lept.*;
 import static org.bytedeco.javacpp.tesseract.*;
+import static org.junit.Assert.assertTrue;
 
 public class BasicTesseractExampleTest {
     
@@ -22,7 +23,9 @@ public class BasicTesseractExampleTest {
         api.SetImage(image);
         // Get OCR result
         outText = api.GetUTF8Text();
-        System.out.println("OCR output:\n" + outText.getString());
+        String string = outText.getString();
+        assertTrue(!string.isEmpty());
+        System.out.println("OCR output:\n" + string);
 
         // Destroy used object and release memory
         api.End();
