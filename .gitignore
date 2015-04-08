@@ -1,0 +1,6 @@
+out/
+logs
+*.db
+build/
+*.iml
+.idea/
